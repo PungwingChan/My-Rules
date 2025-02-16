@@ -1,0 +1,6 @@
+#!name=Netlify
+#!desc=Wechat 微信助手使用模块
+
+[Rule]
+DOMAIN-SUFFIX,netlify.app,DIRECT
+DOMAIN-SUFFIX,netlify.com,DIRECT
