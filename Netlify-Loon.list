@@ -1,0 +1,4 @@
+# 规则名称: Netlify
+
+DOMAIN-SUFFIX,netlify.app,DIRECT
+DOMAIN-SUFFIX,netlify.com,DIRECT
