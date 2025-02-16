@@ -1,4 +1,7 @@
 {
+  "name": "📞Talkatone-AdBlocker",
+  "type": "",
+  "or": true,
   "domain": [
     "aax.amazon-adsystem.com",
     "aax-fe.amazon-adsystem.com",
