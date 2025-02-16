@@ -1,8 +1,4 @@
 {
-  "#desc": [
-    "本规则为 Talkatone 进行策略分流，去除 APP 内的部分第三方广告",
-    "整理作者：Pungwing，Louise_mify"
-  ],
   "name": "📞Talkatone-AdBlocker",
   "type": "",
   "or": true,
