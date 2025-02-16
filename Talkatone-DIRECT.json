@@ -1,9 +1,4 @@
 {
-  "#desc": [
-    "本规则主要为 Talkatone 进行策略分流，解决使用某些节点时无法直接使用 Talkatone 的问题",
-    "本规则仅适用于 Talkatone 登陆状态使用，不适用于软件注册和首次登录",
-    "整理作者：Pungwing，Louise_mify"
-  ],
   "name": "📞Talkatone-DIRECT",
   "type": "",
   "or": true,
