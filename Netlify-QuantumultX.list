@@ -1,0 +1,4 @@
+# 规则名称: Netlify
+
+HOST-SUFFIX,netlify.app,DIRECT
+HOST-SUFFIX,netlify.com,DIRECT
