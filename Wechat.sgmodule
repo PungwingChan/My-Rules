@@ -1,0 +1,57 @@
+#!name=Wechat
+#!desc=Wechat 日常使用模块
+
+[Rule]
+# Domain Suffix Rules
+DOMAIN-SUFFIX,myqcloud.com,DIRECT
+DOMAIN-SUFFIX,qlogo.cn,DIRECT
+DOMAIN-SUFFIX,qpic.cn,DIRECT
+DOMAIN-SUFFIX,qq.com,DIRECT
+DOMAIN-SUFFIX,servicewechat.com,DIRECT
+DOMAIN-SUFFIX,tencent-cloud.com,DIRECT
+DOMAIN-SUFFIX,tencent-cloud.net,DIRECT
+DOMAIN-SUFFIX,tencent.com,DIRECT
+DOMAIN-SUFFIX,tencentcs.com,DIRECT
+DOMAIN-SUFFIX,tenpay.com,DIRECT
+DOMAIN-SUFFIX,wechat.com,DIRECT
+DOMAIN-SUFFIX,wechatlegal.net,DIRECT
+DOMAIN-SUFFIX,wechatpay.com,DIRECT
+DOMAIN-SUFFIX,weixin.com,DIRECT
+DOMAIN-SUFFIX,weixinbridge.com,DIRECT
+DOMAIN-SUFFIX,weixinsxy.com,DIRECT
+
+# Specific Domains
+DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net,DIRECT
+DOMAIN,btrace.qq.com,DIRECT
+DOMAIN,dl.wechat.com,DIRECT
+DOMAIN,dldir1.qq.com,DIRECT
+DOMAIN,sgfindershort.wechat.com,DIRECT
+DOMAIN,sgilinkshort.wechat.com,DIRECT
+DOMAIN,sglong.wechat.com,DIRECT
+DOMAIN,sgminorshort.wechat.com,DIRECT
+DOMAIN,sgquic.wechat.com,DIRECT
+DOMAIN,sgshort.wechat.com,DIRECT
+DOMAIN,slife.xy-asia.com,DIRECT
+DOMAIN,soup.v.qq.com,DIRECT
+DOMAIN,tencentmap.wechat.com,DIRECT
+DOMAIN,vweixinf.tc.qq.com,DIRECT
+DOMAIN,weixin110.qq.com,DIRECT
+DOMAIN,wup.imtt.qq.com,DIRECT
+DOMAIN,wx.tenpay.com,DIRECT
+DOMAIN,wxapp.tc.qq.com,DIRECT
+
+# IP CIDR Rules
+IP-CIDR,101.32.104.4/32,DIRECT,no-resolve
+IP-CIDR,101.32.104.41/32,DIRECT,no-resolve
+IP-CIDR,101.32.104.56/32,DIRECT,no-resolve
+IP-CIDR,101.32.118.25/32,DIRECT,no-resolve
+IP-CIDR,101.32.133.16/32,DIRECT,no-resolve
+IP-CIDR,101.32.133.53/32,DIRECT,no-resolve
+IP-CIDR,101.32.133.209/32,DIRECT,no-resolve
+IP-CIDR,129.226.3.47/32,DIRECT,no-resolve
+IP-CIDR,129.226.107.244/32,DIRECT,no-resolve
+
+# User Agent Rules
+USER-AGENT,MicroMessenger*,DIRECT
+USER-AGENT,WeChat*,DIRECT
+IP-ASN,132203,DIRECT
