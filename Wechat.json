@@ -1,0 +1,59 @@
+{
+  "rules": [
+    {
+      "outbound": "direct",
+      "name": "✅ Wechat",
+      "switch": true,
+      "or": true,
+      "domain_suffix": [
+        "myqcloud.com",
+        "qlogo.cn",
+        "qpic.cn",
+        "qq.com",
+        "servicewechat.com",
+        "tencent-cloud.com",
+        "tencent-cloud.net",
+        "tencent.com",
+        "tencentcs.com",
+        "tenpay.com",
+        "wechat.com",
+        "wechatlegal.net",
+        "wechatpay.com",
+        "weixin.com",
+        "weixinbridge.com",
+        "weixinsxy.com"
+      ],
+      "domain": [
+        "apd-pcdnwxlogin.teg.tencent-cloud.net",
+        "btrace.qq.com",
+        "dl.wechat.com",
+        "dldir1.qq.com",
+        "sgfindershort.wechat.com",
+        "sgilinkshort.wechat.com",
+        "sglong.wechat.com",
+        "sgminorshort.wechat.com",
+        "sgquic.wechat.com",
+        "sgshort.wechat.com",
+        "slife.xy-asia.com",
+        "soup.v.qq.com",
+        "tencentmap.wechat.com",
+        "vweixinf.tc.qq.com",
+        "weixin110.qq.com",
+        "wup.imtt.qq.com",
+        "wx.tenpay.com",
+        "wxapp.tc.qq.com"
+      ],
+      "ip_cidr": [
+        "101.32.104.4/32",
+        "101.32.104.41/32",
+        "101.32.104.56/32",
+        "101.32.118.25/32",
+        "101.32.133.16/32",
+        "101.32.133.53/32",
+        "101.32.133.209/32",
+        "129.226.3.47/32",
+        "129.226.107.244/32"
+      ]
+    }
+  ]
+}
