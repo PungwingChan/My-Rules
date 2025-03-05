@@ -1,7 +1,7 @@
-#UserID：shaoan683@gmail.com
 {
   "rules": [
     {
+      "user_id": "Pungwing",
       "outbound": "direct",
       "name": "📞 Talkatone",
       "switch": true,
