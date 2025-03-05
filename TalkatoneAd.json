@@ -2,7 +2,7 @@
   "rules": [
     {
       "outbound": "block",
-      "name": "📞TalkatoneAd",
+      "name": "📞 TalkatoneAd",
       "switch": true,
       "or": true,
       "domain_suffix": [
