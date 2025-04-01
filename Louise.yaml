@@ -1,3 +1,61 @@
+rule-providers:
+  private:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.yaml
+    path: ./ruleset/private.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  cn_domain:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.yaml
+    path: ./ruleset/cn_domain.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  telegram_domain:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.yaml
+    path: ./ruleset/telegram_domain.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  google_domain:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.yaml
+    path: ./ruleset/google_domain.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  geolocation-!cn:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.yaml
+    path: ./ruleset/geolocation-!cn.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  cn_ip:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.yaml
+    path: ./ruleset/cn_ip.yaml
+    behavior: ipcidr
+    interval: 86400
+    format: yaml
+    type: http
+  telegram_ip:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.yaml
+    path: ./ruleset/telegram_ip.yaml
+    behavior: ipcidr
+    interval: 86400
+    format: yaml
+    type: http
+  google_ip:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.yaml
+    path: ./ruleset/google_ip.yaml
+    behavior: ipcidr
+    interval: 86400
+    format: yaml
+    type: http
+
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
     include-all: true
