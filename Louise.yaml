@@ -116,10 +116,11 @@ proxy-groups:
     name: 🔄 AUTO
     type: url-test
     interval: 300
-- icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png
     name: 🤖 AIGC
     type: select
     proxies:
+      - 🚀 PROXY
       - 🇸🇬 SG AUTO
       - 🇯🇵 JP AUTO
       - 🇺🇸 US AUTO
@@ -127,6 +128,7 @@ proxy-groups:
     name: 📮 Telegram
     type: select
     proxies:
+      - 🚀 PROXY
       - 🇭🇰 HK AUTO
       - 🇸🇬 SG AUTO
       - 🇯🇵 JP AUTO
@@ -135,6 +137,7 @@ proxy-groups:
     name: 🔍 Google
     type: select
     proxies:
+      - 🚀 PROXY
       - 🇭🇰 HK AUTO
       - 🇸🇬 SG AUTO
       - 🇯🇵 JP AUTO
