@@ -1,0 +1,10 @@
+#!name=GitHub 429
+#!desc=解除 GitHub 429 限制
+
+
+[Header Rewrite]
+http-request raw.githubusercontent.com header-replace Accept-Language en-us
+http-request gist.githubusercontent.com header-replace Accept-Language en-us
+
+[MITM]
+hostname = %APPEND% raw.githubusercontent.com, gist.githubusercontent.com
