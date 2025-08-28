@@ -104,13 +104,10 @@ proxies:
     server: gcp-us.528333.xyz
     port: 10001
     uuid: 835d2da0-c925-4149-be5d-0c30a94ed9e8
+    udp: true
     tls: true
     servername: d1ubgpsivl6znc.cloudfront.net
-    udp: true
-    packet-encoding: xudp
-    client-fingerprint: chrome
-    # 如果用 Clash Meta，保留下面一行；如果用 Clash Premium，请删除
-    flow: xtls-rprx-vision
+    skip-cert-verify: true
 
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
