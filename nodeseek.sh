@@ -24,9 +24,17 @@ echo "$KEY" | sudo tee /opt/NodeSeek/cloudflyer_Key.txt
 echo "Cloudflyer 秘钥: $KEY"
 
 echo "=== 启动 Cloudflyer 容器 ==="
+if [ "$(sudo docker ps -a -q -f name=cloudflyer)" ]; then
+  echo "Cloudflyer 容器已存在，先停止并删除..."
+  sudo docker rm -f cloudflyer
+fi
 sudo docker run -itd --name cloudflyer -p 3000:3000 --restart unless-stopped jackzzs/cloudflyer -K "$KEY" -H 0.0.0.0
 
 echo "=== 启动 FlareSolverr 容器 ==="
+if [ "$(sudo docker ps -a -q -f name=flaresolverr)" ]; then
+  echo "FlareSolverr 容器已存在，先停止并删除..."
+  sudo docker rm -f flaresolverr
+fi
 sudo docker run -d --name flaresolverr --network host -e LOG_LEVEL=info --restart unless-stopped ghcr.io/flaresolverr/flaresolverr:latest
 
 echo "=== 安装 Node.js 与 npm ==="
