@@ -46,6 +46,7 @@ pip install "python-telegram-bot[job-queue]" curl-cffi python-dotenv
 echo "=== ✅ 验证服务是否正常 ==="
 sleep 5
 
+# 验证 Cloudflyer
 CLOUDFLYER_STATUS=$(curl -s http://localhost:3000 || true)
 if echo "$CLOUDFLYER_STATUS" | grep -q '{"detail":"Not Found"}'; then
   echo "Cloudflyer 运行正常 ✅"
@@ -54,8 +55,9 @@ else
   echo "返回信息: $CLOUDFLYER_STATUS"
 fi
 
-FLARESOLVERR_STATUS=$(curl -s http://localhost:8191/health || true)
-if echo "$FLARESOLVERR_STATUS" | grep -q '{"status":"ok"}'; then
+# 验证 FlareSolverr
+FLARESOLVERR_STATUS=$(curl -s http://127.0.0.1:8191/health || true)
+if echo "$FLARESOLVERR_STATUS" | grep -E -q '"status"\s*:\s*"ok"'; then
   echo "FlareSolverr 运行正常 ✅"
 else
   echo "FlareSolverr 启动失败 ❌"
