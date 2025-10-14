@@ -1,5 +1,3 @@
-ChatGPT 说：
-
 #!/bin/bash
 set -e
 
@@ -14,13 +12,8 @@ sudo apt install -y ca-certificates curl gnupg lsb-release python3 python3-venv 
 
 echo "=== 安装 Docker ==="
 sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/debian/gpg
- | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-echo
-"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg]
-https://download.docker.com/linux/debian
-
-$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io
 sudo systemctl enable docker
@@ -31,25 +24,13 @@ echo "$KEY" | sudo tee /opt/NodeSeek/cloudflyer_Key.txt
 echo "Cloudflyer 秘钥: $KEY"
 
 echo "=== 启动 Cloudflyer 容器 ==="
-sudo docker run -itd
---name cloudflyer
--p 3000:3000
---restart unless-stopped
-jackzzs/cloudflyer
--K "$KEY"
--H 0.0.0.0
+sudo docker run -itd --name cloudflyer -p 3000:3000 --restart unless-stopped jackzzs/cloudflyer -K "$KEY" -H 0.0.0.0
 
 echo "=== 启动 FlareSolverr 容器 ==="
-sudo docker run -d
---name flaresolverr
---network host
--e LOG_LEVEL=info
---restart unless-stopped
-ghcr.io/flaresolverr/flaresolverr:latest
+sudo docker run -d --name flaresolverr --network host -e LOG_LEVEL=info --restart unless-stopped ghcr.io/flaresolverr/flaresolverr:latest
 
 echo "=== 安装 Node.js 与 npm ==="
-curl -fsSL https://deb.nodesource.com/setup_20.x
- | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
 
 echo "=== 安装 Node.js 依赖 ==="
@@ -65,27 +46,23 @@ pip install "python-telegram-bot[job-queue]" curl-cffi python-dotenv
 echo "=== ✅ 验证服务是否正常 ==="
 sleep 5
 
-CLOUDFLYER_STATUS=$(curl -s http://localhost:3000
- || true)
+CLOUDFLYER_STATUS=$(curl -s http://localhost:3000 || true)
 if echo "$CLOUDFLYER_STATUS" | grep -q '{"detail":"Not Found"}'; then
-echo "Cloudflyer 运行正常 ✅"
+  echo "Cloudflyer 运行正常 ✅"
 else
-echo "Cloudflyer 启动失败 ❌"
-echo "返回信息: $CLOUDFLYER_STATUS"
+  echo "Cloudflyer 启动失败 ❌"
+  echo "返回信息: $CLOUDFLYER_STATUS"
 fi
 
-FLARESOLVERR_STATUS=$(curl -s http://localhost:8191/health
- || true)
+FLARESOLVERR_STATUS=$(curl -s http://localhost:8191/health || true)
 if echo "$FLARESOLVERR_STATUS" | grep -q '{"status":"ok"}'; then
-echo "FlareSolverr 运行正常 ✅"
+  echo "FlareSolverr 运行正常 ✅"
 else
-echo "FlareSolverr 启动失败 ❌"
-echo "返回信息: $FLARESOLVERR_STATUS"
+  echo "FlareSolverr 启动失败 ❌"
+  echo "返回信息: $FLARESOLVERR_STATUS"
 fi
 
 echo "=== 部署完成 ==="
-echo "Cloudflyer API 地址: http://localhost:3000
-"
-echo "FlareSolverr API 地址: http://127.0.0.1:8191/v1
-"
+echo "Cloudflyer API 地址: http://localhost:3000"
+echo "FlareSolverr API 地址: http://127.0.0.1:8191/v1"
 echo "秘钥文件路径: /opt/NodeSeek/cloudflyer_Key.txt"
