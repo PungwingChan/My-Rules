@@ -1,0 +1,37 @@
+#!name=闲鱼去广告（Shadowrocket）
+#!desc=去除闲鱼APP开屏广告、首页流广告、搜索广告、推广卡片等内容
+
+[Map Local]
+
+# 开屏广告
+^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\/.+\/splash\.ads\/ data-type=text data="{}" status-code=200 header="Content-Type: application/json"
+
+# 首页推荐流广告（NextFresh）
+^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\/.+\/idlehome\.home\.nextfresh\/ data-type=text data="{}" status-code=200 header="Content-Type: application/json"
+
+# Widget 小组件广告
+^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\/.+\/idlehome\.widget\.refresh\.get\/ data-type=text data="{}" status-code=200 header="Content-Type: application/json"
+
+# 我的页面推广
+^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\/.+\/idle\.user\.page\.my\.adapter\/ data-type=text data="{}" status-code=200 header="Content-Type: application/json"
+
+# 搜索页广告
+^https?:\/\/g-?acs\.m\.goofish\.com\/gw\/mtop\/.+\/idlemtopsearch\.search\/ data-type=text data="{}" status-code=200 header="Content-Type: application/json"
+
+# 搜索-发现页广告
+^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\/.+\/idlemtopsearch\.search\.discover\/ data-type=text data="{}" status-code=200 header="Content-Type: application/json"
+
+# 搜索-激活页广告
+^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\/.+\/idlemtopsearch\.search\.activate\/ data-type=text data="{}" status-code=200 header="Content-Type: application/json"
+
+# 购买页广告
+^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\/.+\/idle\.item\.buy\.feeds\/ data-type=text data="{}" status-code=200 header="Content-Type: application/json"
+
+# 本地生活广告组件
+^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\/.+\/idle\.local\.flow\.plat\.section\/ data-type=text data="{}" status-code=200 header="Content-Type: application/json"
+
+# 首页新卡片广告
+^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop\/.+\/idlehome\.home\.newitem\.page\/ data-type=text data="{}" status-code=200 header="Content-Type: application/json"
+
+[MITM]
+hostname = %APPEND% acs.m.goofish.com, g-acs.m.goofish.com
