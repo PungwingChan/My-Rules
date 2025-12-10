@@ -1,0 +1,11 @@
+DOMAIN,secure.xserver.ne.jp
+DOMAIN-SUFFIX,xserver.ne.jp
+DOMAIN-SUFFIX,secure.xserver.ne.jp
+DOMAIN-SUFFIX,www.xserver.ne.jp
+DOMAIN-SUFFIX,sv.xserver.ne.jp
+DOMAIN-SUFFIX,xapanel.xserver.ne.jp
+DOMAIN-SUFFIX,api.xserver.ne.jp
+DOMAIN-SUFFIX,xserver.jp
+DOMAIN-SUFFIX,secure.xserver.jp
+DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,turnstile.cloudflare.com
